@@ -1,0 +1,4 @@
+backend,records,runtime_seconds,persistent,artifact
+ram,20,0.006180700002005324,False,none (process memory)
+csv,20,0.0066682999895419925,True,backend_csv.csv
+sql,20,0.12232709999079816,True,backend_sql.db

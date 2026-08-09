@@ -1,0 +1,10 @@
+\chapter{Entradas, procesos y salidas}
+El input hidrológico concreto se encuentra en
+\path{03_hydrology_demo/data/input.csv}. Contiene \texttt{date},
+\texttt{precip\_mm}, \texttt{pet\_mm} y \texttt{q\_obs}. Las dos variables climáticas están nombradas en mm; el código no define si son acumulados o promedios. La unidad de caudal no está definida: no debe presentarse como m³/s.
+
+El lector rechaza archivo ausente, columnas faltantes, NaN, fechas inválidas, duplicadas o desordenadas, valores no numéricos y negativos. La tabla completa de campos y validaciones está en \path{docs/07_input_process_output.md}.
+
+\input{tables/master_io}
+
+Cada run conserva configuración, entorno, registro, base SPOTPY, métricas, parámetros, serie inicial/mejor y figuras. Los archivos centrales son \texttt{config.json}, \texttt{environment.json}, \texttt{run.log} y \texttt{metrics.json}. Las columnas \texttt{simulation\_0...29} no incluyen fecha; el índice temporal se recupera del input validado.

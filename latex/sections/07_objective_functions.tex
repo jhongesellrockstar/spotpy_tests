@@ -1,0 +1,13 @@
+\chapter{Funciones objetivo y métricas}
+Con observado $O_i$ y simulado $S_i$, NSE es
+\[\mathrm{NSE}=1-\frac{\sum_i(S_i-O_i)^2}{\sum_i(O_i-\bar O)^2}.\]
+Su ideal es 1 y se maximiza. KGE combina correlación, razón de variabilidad y razón de medias; su ideal también es 1 \citep{gupta2009kge}. RMSE y MAE conservan la unidad desconocida del caudal y se minimizan. PBIAS se expresa en porcentaje; en este laboratorio positivo significa sobreestimación. $R^2$ mide asociación, no ausencia de sesgo.
+
+SCE-UA está configurado por SPOTPY 1.6.7 para minimizar; por ello recibe $-\mathrm{NSE}$. DDS maximiza y recibe NSE natural. Los JSON vuelven a calcular las métricas con signo hidrológico natural. Esta separación evita elegir accidentalmente el peor candidato.
+
+Una likelihood no es automáticamente una métrica. Para DREAM se usó una
+likelihood gaussiana con error de medición, no NSE. Su nombre en la API es
+\begin{lstlisting}
+gaussianLikelihoodMeasErrorOut
+\end{lstlisting}
+La validez bayesiana depende de un modelo explícito y defendible del error.

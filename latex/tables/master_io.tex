@@ -1,0 +1,23 @@
+\begin{landscape}
+\scriptsize
+\begin{longtable}{p{2.1cm}p{3.0cm}p{2.0cm}p{2.0cm}p{3.6cm}p{3.0cm}p{2.2cm}p{2.0cm}}
+\caption{Tabla maestra de entradas, procesos y salidas.}\label{tab:masterio}\\
+\toprule Etapa & Entrada concreta & Formato & Unidad & Proceso & Salida concreta & Formato & Unidad\\\midrule\endfirsthead
+\toprule Etapa & Entrada concreta & Formato & Unidad & Proceso & Salida concreta & Formato & Unidad\\\midrule\endhead
+Clima & \texttt{date, precip\_mm, pet\_mm} & CSV & fecha, mm, mm & Validación Pandas & forcing & DataFrame & mismas\\
+Observación & \texttt{q\_obs} & CSV float & no definida & validación/alineamiento & evaluation & array & no definida\\
+Modelo & forcing + 5 parámetros & arrays & mixta & balances de reservorios & \texttt{q\_sim} & array & no definida\\
+Parámetros & rangos Uniform & objetos & mixta & \texttt{parameters()} & candidato & ParameterSet & mixta\\
+Simulación & candidato + forcing & Python & mixta & \texttt{simulation()} & serie & array & no definida\\
+Evaluación & \texttt{q\_obs} & DataFrame & no definida & \texttt{evaluation()} & referencia & array & no definida\\
+Objetivo & sim + obs & arrays & no definida & \texttt{objectivefunction()} & score/loss & float/list & [-], \%, o Q\\
+Sampling & setup, runs, seed & CLI/config & n/a & \texttt{sample()} & evaluaciones & CSV/RAM/SQL & mixta\\
+FAST & 325 candidatos & diseño FAST & parámetros & Fourier & S1/ST & CSV/PNG & [-]\\
+SCE-UA & 120 nominales & sampler & n/a & complejos; minimiza -NSE & calibrado & CSV/JSON/PNG & mixta\\
+DDS & 120 & sampler & n/a & dimensiones dinámicas; maximiza NSE & calibrado & CSV/JSON/PNG & mixta\\
+Externo & JSON + input CSV & archivos & mixta & subprocess + timeout & \texttt{output.csv} & CSV & no definida\\
+Futuro SWAT+ & copia + parámetros verificados & por definir & por definir & \texttt{swatplus.exe} & Q simulada & por verificar & objetivo futuro: m³/s\\
+\bottomrule
+\end{longtable}
+\end{landscape}
+

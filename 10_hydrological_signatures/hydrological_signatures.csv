@@ -1,0 +1,9 @@
+signature,value,unit,input
+mean_flow,4.147333333333333,UNIDAD NO DEFINIDA EN EL LABORATORIO ACTUAL,q_obs; 30 valores diarios; sin NaN
+q05_exceedance,9.584999999999997,UNIDAD NO DEFINIDA EN EL LABORATORIO ACTUAL,q_obs; 30 valores diarios; sin NaN
+q50_exceedance,3.1,UNIDAD NO DEFINIDA EN EL LABORATORIO ACTUAL,q_obs; 30 valores diarios; sin NaN
+q95_exceedance,0.6585000000000001,UNIDAD NO DEFINIDA EN EL LABORATORIO ACTUAL,q_obs; 30 valores diarios; sin NaN
+coefficient_variation,0.7408538339179512,[-],q_obs; 30 valores diarios; sin NaN
+mean_over_median_skewness,1.3378494623655912,[-],q_obs; 30 valores diarios; sin NaN
+lag1_autocorrelation,0.08044116394086337,[-],q_obs; 30 valores diarios; sin NaN
+zero_flow_frequency,0.0,% de pasos,q_obs; 30 valores diarios; sin NaN

@@ -1,0 +1,13 @@
+\chapter{Capacidades avanzadas evaluadas}
+\section{Firmas hidrológicas}
+Sobre 30 días se calcularon media (4.1473), Q5 (9.585), Q50 (3.1), Q95 (0.6585), coeficiente de variación (0.7409), razón media/mediana (1.3378), autocorrelación lag-1 (0.0804) y 0\% de ceros. Las firmas con dimensión de Q conservan unidad desconocida. No se forzaron frecuencias anualizadas, extremos anuales, recesión ni baseflow.
+
+\section{NSGA-II}
+NSGA-II conserva diversidad por dominancia y crowding \citep{deb2002nsgaii}. Se minimizaron por separado $1-$NSE, $1-$KGE y $|$PBIAS$|/100$. Se guardaron 48 evaluaciones y 8 filas no dominadas. Un frente de Pareto describe trade-offs; no produce un ganador sin preferencias. La ejecución emitió un warning numérico de crowding por rango objetivo nulo en un subconjunto; terminó y generó evidencia, pero el presupuesto es sólo didáctico. PA-DDS continúa marcado beta en la fuente instalada.
+
+\section{DREAM y posterior}
+DREAM evoluciona múltiples cadenas mediante diferencias adaptativas \citep{vrugt2009dream}. Con siete cadenas y 140 registros, los R-hat finales estuvieron entre 2.07 y 4.47, muy por encima del criterio 1.2: \textbf{no convergió}. El diagnóstico se relaciona con la comparación entre/ dentro de cadenas \citep{gelman1992diagnostic}. El top 20\% por likelihood es demostrativo y no se presenta como posterior robusta. DE-MCz y Geweke quedan no probados.
+
+\section{Bases}
+RAM, CSV y SQLite conservaron 20 registros idénticamente muestreados. RAM es efímera; CSV transparente; SQLite consultable. En Windows, SQL exige \texttt{dbname} relativo porque SPOTPY lo reutiliza como nombre de tabla. HDF5 no se probó por ausencia de PyTables.
+

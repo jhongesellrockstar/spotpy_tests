@@ -1,0 +1,12 @@
+{
+  "criterion": "all R-hat < 1.2",
+  "final_r_hat": {
+    "runoff_coeff": 2.765324252977224,
+    "soil_capacity": 4.472458900179391,
+    "et_factor": 2.092793304865006,
+    "quick_recession": 2.176936580098036,
+    "base_recession": 2.0733049789431877
+  },
+  "converged": false,
+  "interpretation": "Didactic budget; false means no convergence claim."
+}

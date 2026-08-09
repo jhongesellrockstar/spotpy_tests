@@ -1,0 +1,9 @@
+\chapter{Entorno verificado}
+Se creó un entorno Conda aislado; no se modificó \texttt{base} ni Python global.
+\begin{table}[htbp]\centering\caption{Versiones ejecutadas.}\label{tab:versions}
+\begin{tabular}{ll}\toprule Componente & Versión\\\midrule
+Python & 3.12.13\\ SPOTPY & 1.6.7\\ NumPy & 2.5.2\\ SciPy & 1.18.0\\ Pandas & 3.0.5\\ Matplotlib & 3.11.1\\ pytest & 9.1.1\\\bottomrule
+\end{tabular}\end{table}
+
+La instalación no incluye \texttt{mpi4py}, PyTables/HDF5, \texttt{pathos} ni \texttt{multiprocess}. La ejecución validada es secuencial. \texttt{environment.yml} y \texttt{requirements.txt} fijan las versiones. \texttt{pip check} no reporta requisitos rotos.
+

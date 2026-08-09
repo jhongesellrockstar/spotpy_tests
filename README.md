@@ -100,7 +100,9 @@ Las versiones exactas están en `environment.yml` y `requirements.txt`. MPI no e
 
 `src/common` contiene lector, modelo, métricas, setup y gestor de experimentos. Los directorios numerados son lecciones/scripts cortos. `run_experiment.py` es el acceso unificado. `runs/` conserva ejecuciones sin sobrescritura; sólo `.gitkeep` se versiona. `tests/` valida contratos y fallos.
 
-Documentación: conceptos (`docs/01_spotpy_conceptos.md`), métricas (`docs/02_metricas_hidrologicas.md`), responsabilidad climática (`docs/03_spotpy_y_datos_climaticos.md`), matriz SWAT+ (`docs/04_spotpy_para_swatplus_igp.md`) y comandos (`docs/05_execution_guide.md`).
+Documentación: conceptos (`docs/01_spotpy_conceptos.md`), métricas (`docs/02_metricas_hidrologicas.md`), responsabilidad climática (`docs/03_spotpy_y_datos_climaticos.md`), matriz SWAT+ (`docs/04_spotpy_para_swatplus_igp.md`) y comandos (`docs/05_execution_guide.md`). La ampliación incluye auditoría funcional (`docs/06_auditoria_funcionalidades_spotpy.md`), matriz input–proceso–output (`docs/07_input_process_output.md`), estrategia paralela (`docs/08_parallelization_strategy.md`), resumen para reunión (`docs/09_resumen_para_reunion.md`), hoja rápida (`docs/10_cheatsheet_spotpy_igp.md`) y el manual compilado (`latex/SPOTPY_IGP_Manual.pdf`).
+
+Los niveles 10–14 añaden firmas hidrológicas, NSGA-II multiobjetivo, DREAM con diagnóstico de convergencia, eFAST y comparación RAM/CSV/SQL. Son ejercicios avanzados ejecutados con presupuestos didácticos; sus README locales explican entradas, salidas y límites.
 
 ## Límites científicos
 

@@ -1,0 +1,9 @@
+\chapter{Introducción}
+SPOTPY es una biblioteca Python para estimar, explorar y analizar parámetros de modelos mediante algoritmos intercambiables \citep{houska2015spotpy}. Resuelve el problema operativo de conectar un modelo arbitrario con muestreo, optimización, sensibilidad o incertidumbre sin reescribir el algoritmo para cada modelo.
+
+No limpia precipitación, corrige temperatura, procesa DEM, delimita cuencas, genera HRU ni construye proyectos SWAT+. Esas tareas pertenecen al preprocesamiento. SPOTPY empieza cuando existe un contrato reproducible que transforma parámetros y forzantes en una simulación comparable con observaciones.
+
+Un parámetro calibrable es una entrada incierta expuesta al sampler mediante nombre, distribución prior y límites. Una iteración es una evaluación de un conjunto: se ejecuta el modelo, se obtiene una serie y se calcula un objetivo. El sampler genera conjuntos, objetivos, simulaciones y, según el método, cadenas o índices de sensibilidad. La calibración busca buen ajuste en un período; la validación comprueba capacidad fuera de ese período sin reajustar. La incertidumbre describe distribuciones plausibles, no sólo un óptimo.
+
+El laboratorio usa un modelo lluvia-caudal didáctico de 30 pasos. Por ello demuestra operatividad, no validez hidrológica para una cuenca peruana.
+

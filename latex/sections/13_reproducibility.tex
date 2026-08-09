@@ -1,0 +1,29 @@
+\chapter{Reproducibilidad}
+Desde Anaconda Prompt:
+\begin{lstlisting}[language=bash]
+cd C:\Users\ACER\Documents\GitHub\spotpy_tests
+conda activate spotpy-igp
+python 01_smoke_test\run_smoke_test.py
+python run_experiment.py --example rosenbrock --algorithm mc --runs 100
+python 03_hydrology_demo\run_demo.py
+python run_experiment.py --example hydrology --algorithm lhs --runs 100
+python run_experiment.py --example hydrology --algorithm fast --runs 325
+python run_experiment.py --example hydrology --algorithm sceua --runs 500
+python run_experiment.py --example hydrology --algorithm dds --runs 500
+python 08_external_model_adapter\run_demo.py
+python -m pytest -v
+\end{lstlisting}
+
+Los experimentos avanzados se ejecutan mediante los scripts \path{run_signatures.py},
+\path{run_nsga2.py}, \path{run_dream.py}, \path{run_efast.py} y
+\path{run_backends.py}, cada uno desde su directorio numerado.
+
+Para recompilar este documento desde la raíz:
+\begin{lstlisting}[language=bash]
+cd latex
+xelatex -interaction=nonstopmode -halt-on-error -jobname=SPOTPY_IGP_Manual main.tex
+bibtex SPOTPY_IGP_Manual
+xelatex -interaction=nonstopmode -halt-on-error -jobname=SPOTPY_IGP_Manual main.tex
+xelatex -interaction=nonstopmode -halt-on-error -jobname=SPOTPY_IGP_Manual main.tex
+\end{lstlisting}
+La semilla 42 está fijada donde la API lo permite. Cada ejecución normal crea identificador con microsegundos y no sobrescribe runs anteriores.

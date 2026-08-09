@@ -1,6 +1,7 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+tmp/
 .conda/
 .env
 .codebase-memory/
@@ -9,4 +10,15 @@ runs/*/
 **/outputs/**
 **/workdirs/
 *.log
+latex/**/*.aux
+latex/*.aux
+latex/*.bbl
+latex/*.blg
+latex/*.fdb_latexmk
+latex/*.fls
+latex/*.lof
+latex/*.lot
+latex/*.out
+latex/*.toc
+!latex/build.log
 08_external_model_adapter/output.csv

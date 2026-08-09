@@ -1,0 +1,61 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{fontspec}
+\setmainfont{Arial}
+\setsansfont{Arial}
+\usepackage{geometry}
+\geometry{margin=2.4cm}
+\usepackage{graphicx}
+\usepackage{booktabs,longtable,tabularx,array,pdflscape}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref}
+\definecolor{igpblue}{HTML}{176B87}
+\definecolor{igpgreen}{HTML}{4C956C}
+\definecolor{codegray}{HTML}{F2F4F4}
+\hypersetup{pdftitle={SPOTPY como herramienta de experimentación, sensibilidad y calibración para modelos hidrológicos},pdfauthor={Jhon Gesell Villanueva Portella}}
+\lstset{basicstyle=\ttfamily\small,backgroundcolor=\color{codegray},frame=single,breaklines=true,columns=fullflexible,keepspaces=true}
+\pagestyle{fancy}\fancyhf{}\lhead{SPOTPY Laboratory for SWAT+ IGP}\rhead{PP00089}\cfoot{\thepage}
+\setlength{\headheight}{14pt}
+\setcounter{tocdepth}{2}
+\begin{document}
+\begin{titlepage}
+\centering
+\vspace*{1.7cm}
+{\color{igpblue}\rule{\textwidth}{2pt}}\\[1.2cm]
+{\Huge\bfseries SPOTPY como herramienta de experimentación, sensibilidad y calibración para modelos hidrológicos:\par}
+\vspace{0.5cm}{\LARGE laboratorio reproducible orientado a SWAT+ IGP\par}
+\vspace{1.2cm}{\Large Proyecto PP00089 - Instituto Geofísico del Perú\par}
+\vfill
+{\large Autor editable: Jhon Gesell Villanueva Portella\par}
+\vspace{0.3cm}{\large Versión del laboratorio: SPOTPY 1.6.7\par}
+\vspace{0.3cm}{\large \today\par}
+\vspace{1.2cm}{\color{igpgreen}\rule{\textwidth}{2pt}}
+\end{titlepage}
+\chapter*{Resumen ejecutivo}\addcontentsline{toc}{chapter}{Resumen ejecutivo}
+Este manual documenta un laboratorio ejecutado y verificable, no sólo una propuesta. Explica qué recibe SPOTPY, cómo envuelve un modelo, qué persiste y cómo se interpretan exploración, sensibilidad, calibración, multiobjetivo e incertidumbre. MC, LHS, FAST, SCE-UA y DDS están probados; las capacidades avanzadas se clasifican con cautela. La conexión con SWAT+ se presenta como arquitectura futura: no se afirma una integración real sin ejecutable, proyecto, parámetros, unidades y parser verificados.
+\tableofcontents
+\listoffigures
+\listoftables
+\include{sections/01_introduction}
+\include{sections/02_spotpy_architecture}
+\include{sections/03_environment}
+\include{sections/04_inputs_outputs}
+\include{sections/05_rosenbrock}
+\include{sections/06_hydrology_demo}
+\include{sections/07_objective_functions}
+\include{sections/08_sensitivity}
+\include{sections/09_calibration}
+\include{sections/10_external_model}
+\include{sections/11_swatplus_architecture}
+\include{sections/12_advanced_capabilities}
+\include{sections/13_reproducibility}
+\include{sections/14_conclusions}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

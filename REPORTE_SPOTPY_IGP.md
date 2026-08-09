@@ -78,7 +78,7 @@ Para la demo: `03_hydrology_demo/data/input.csv` y config/CLI. Para un modelo ex
 - Datos y modelo son sintéticos/didácticos; no hay validación temporal independiente.
 - FAST depende fuertemente de rangos, métrica y tamaño de muestra.
 - SCE-UA excedió el límite nominal y no persistió todos los candidatos internos.
-- PA-DDS declara estado beta en la fuente instalada; DREAM/DE-MCz no se ensayaron porque requieren un diseño probabilístico serio.
+- PA-DDS declara estado beta en la fuente instalada. DREAM se ensayó sólo como diagnóstico didáctico con likelihood explícita; DE-MCz no se ensayó porque exige un diseño probabilístico y presupuesto adicionales.
 - Sin MPI/paralelización y sin ejecución SWAT+ real por restricción explícita.
 - Tiempos subsegundo no representan el solver Fortran.
 
@@ -132,3 +132,41 @@ python -m pip check
 | SWAT+ | Prototipo seguro | config validada; no ejecutado | `09_swatplus_adapter_prototype/` |
 | Tests | Operativo | 22 passed | `tests/` |
 
+## 19. COBERTURA DE SPOTPY 1.6.7
+
+La matriz exhaustiva, con evidencia de API y prioridad para SWAT+, está en `docs/06_auditoria_funcionalidades_spotpy.md`. Resumen:
+
+- **Implementado y probado:** setup SPOTPY; MC, LHS, FAST, eFAST, SCE-UA, DDS, NSGA-II y DREAM; métricas hidrológicas; firmas seleccionadas; backends RAM, CSV y SQL; adaptador de proceso externo secuencial.
+- **Implementado parcialmente:** diagnóstico de convergencia DREAM (el ejercicio no convergió), multiobjetivo con presupuesto pequeño, incertidumbre didáctica, prototipo SWAT+ y comparación de backends.
+- **Disponible pero no implementado:** MCMC, MLE, SA, ROPE, DE-MCz, ABC, FSCABC, PA-DDS, HDF5, base personalizada y paralelización `mpc`/`umpc`/MPI.
+- **No prioritario por ahora:** ampliar el catálogo por cobertura nominal sin pregunta científica, o paralelizar antes de validar aislamiento, reinicio y determinismo del modelo externo.
+
+## 20. Experimentos avanzados ejecutados
+
+| Experimento | Ejecución | Resultado verificable | Interpretación |
+|---|---:|---|---|
+| Firmas hidrológicas | 30 observaciones | media 4.1473; Q5 9.585; Q50 3.100; Q95 0.6585 | Serie demasiado corta para firmas anuales o recesión robusta. |
+| NSGA-II | 48 evaluaciones | 8 soluciones no dominadas | Frontera didáctica para `1-NSE`, `1-KGE` y `abs(PBIAS)/100`; no estable científicamente. |
+| DREAM | 140 muestras, 7 cadenas | R-hat final 2.07–4.47; `converged=false` | Demuestra el flujo y evita afirmar convergencia inexistente. |
+| eFAST | 71 evaluaciones | fracción parcial mayor: `runoff_coeff` 0.3138 | Presupuesto mínimo; sirve como verificación, no como análisis definitivo. |
+| Backends | 20 registros por backend | RAM, CSV y SQL coherentes | SQL fue más lento en esta microprueba; no es benchmark del solver. |
+
+## 21. Input → proceso → output
+
+`docs/07_input_process_output.md` documenta cada experimento 01–14, sus parámetros, unidades justificables, funciones objetivo, archivos de salida y columnas reales de SPOTPY (`like*`, `par*`, `simulation_*`, `chain`). La unidad de `q_obs` permanece explícitamente desconocida; no se inventó m³/s.
+
+## 22. Paralelización
+
+`docs/08_parallelization_strategy.md` compara `seq`, `mpc`, `umpc` y MPI. El entorno actual sólo valida secuencial: faltan `pathos` y `mpi4py`. Para SWAT+ se requiere una copia independiente del proyecto por worker, rutas locales y recolección central; no se activó paralelismo sin esas garantías.
+
+## 23. Manual, reunión y material operativo
+
+- Manual fuente: `latex/main.tex`, 14 capítulos, bibliografía DOI y figuras vectoriales.
+- PDF compilado: `latex/SPOTPY_IGP_Manual.pdf` (23 páginas).
+- Registro de compilación: `latex/build.log`.
+- Resumen de tres minutos: `docs/09_resumen_para_reunion.md`.
+- Hoja rápida: `docs/10_cheatsheet_spotpy_igp.md`.
+
+## 24. Validación final de la ampliación
+
+El PDF se compiló con XeLaTeX/BibTeX, se renderizó a imágenes para inspección página por página y se verificaron índice, figuras, tablas y bibliografía. La suite conserva sus 22 pruebas; los cinco scripts avanzados concluyeron con código 0. DREAM no alcanzó convergencia y se reporta como tal. No se creó commit ni se hizo push.

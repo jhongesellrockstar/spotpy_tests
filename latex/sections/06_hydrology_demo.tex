@@ -1,0 +1,9 @@
+\chapter{Modelo hidrológico didáctico}
+El modelo contiene reservorios de suelo, respuesta rápida y base. Precipitación y PET impulsan 30 pasos diarios. Sus parámetros se listan en \cref{tab:parameters}.
+\begin{table}[htbp]\centering\small\caption{Parámetros didácticos; no son parámetros SWAT+.}\label{tab:parameters}
+\begin{tabular}{lrrll}\toprule Parámetro & Mín. & Máx. & Prior & Unidad\\\midrule
+runoff\_coeff & 0.05&0.85&Uniform&[-]\\ soil\_capacity&20&250&Uniform&mm, por consistencia interna\\ et\_factor&0.2&1.5&Uniform&[-]\\ quick\_recession&0.15&0.95&Uniform&fracción/paso\\ base\_recession&0.005&0.25&Uniform&fracción/paso\\\bottomrule
+\end{tabular}\end{table}
+
+MC con 50 muestras produjo NSE 0.908542 y KGE 0.898044. Estos valores verifican que el pipeline puede recuperar un buen candidato respecto del conjunto sintético; no validan estructura, unidades ni capacidad predictiva en otra época. Una calibración científica necesita warm-up, separación calibración/validación, incertidumbre observacional y datos suficientemente largos.
+

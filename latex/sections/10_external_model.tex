@@ -1,0 +1,7 @@
+\chapter{Control de un modelo externo}
+El adaptador ficticio materializa el puente hacia un solver: crea directorio UUID, escribe parámetros, lanza un proceso con \texttt{subprocess.run}, fija \texttt{cwd}/timeout, captura stdout/stderr, verifica return code y archivo, parsea \texttt{output.csv} y limpia o preserva.
+
+Los tests cubren éxito, fallo y timeout. Una ejecución fallida genera una excepción con causa; no debe contaminar otros workers. SPOTPY sólo necesita que \texttt{simulation()} traduzca el conjunto candidato a esa secuencia y devuelva la serie.
+
+La demostración usa Python como ejecutable externo. Sustituirlo por \texttt{swatplus.exe} requiere verificar archivos, parámetros, unidades y salida real; no basta cambiar el nombre del comando.
+

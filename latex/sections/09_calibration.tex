@@ -1,0 +1,7 @@
+\chapter{Calibración: SCE-UA y DDS}
+SCE-UA evoluciona complejos para afrontar óptimos múltiples en modelos lluvia-caudal \citep{duan1992sceua}. Se solicitaron 120 evaluaciones; SPOTPY realizó 225 internas y guardó 88. El mejor interno alcanzó NSE 0.954195, KGE 0.860940, RMSE 0.657595 y PBIAS -8.996\%. El análisis usa el estado interno porque el CSV omitió candidatos descartados por la evolución.
+
+DDS reduce dinámicamente el número de dimensiones perturbadas conforme avanza el presupuesto \citep{tolson2007dds}. Con 120 evaluaciones obtuvo NSE 0.963318, KGE 0.981289, RMSE 0.588474 y PBIAS 0.292\%.
+
+DDS resultó mejor en este caso, semilla y presupuesto; no demuestra superioridad universal. Validación significaría congelar parámetros y evaluar otro período, tarea pendiente por longitud del dataset.
+

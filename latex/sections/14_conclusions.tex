@@ -1,0 +1,7 @@
+\chapter{Conclusiones}
+El laboratorio prueba que SPOTPY puede separar modelo, datos, objetivos y algoritmos, persistir experimentos y controlar procesos externos. FAST, SCE-UA y DDS ya aportan un camino claro hacia sensibilidad y calibración alrededor de SWAT+.
+
+La principal brecha no es añadir más samplers. Es definir científicamente inputs/units, verificar un proyecto SWAT+, separar calibración/validación, adoptar una likelihood defendible y garantizar directorios por worker. DREAM demostró correctamente una no-convergencia; NSGA-II demostró el contrato multiobjetivo sin declarar un frente estable.
+
+El próximo paso recomendado es una única corrida SWAT+ reproducible sobre copia controlada, con writer/parser testeados y Q observada/simulada realmente expresada en m³/s. Sólo después corresponde aumentar evaluaciones o paralelizar.
+

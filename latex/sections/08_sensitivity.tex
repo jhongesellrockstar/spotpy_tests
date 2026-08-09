@@ -1,0 +1,7 @@
+\chapter{Sensibilidad FAST y eFAST}
+Sensibilidad pregunta cuánto cambia un output al variar inputs; calibración busca valores que ajustan observaciones. FAST asigna frecuencias a parámetros y descompone varianza mediante Fourier \citep{cukier1973fast}. Con 325 evaluaciones, el ranking ST fue: runoff\_coeff 0.88951; quick\_recession 0.39920; base\_recession 0.04214; soil\_capacity 0.03988; et\_factor 0.02907.
+
+Un ST alto significa influencia dentro de estos rangos, este modelo y esta métrica; no prueba causalidad universal ni identifica el mejor valor. Antes de SWAT+ ayuda a reducir/priorizar parámetros si sus rangos son defendibles.
+
+eFAST extiende el diseño para estimar contribuciones espectrales \citep{saltelli1999efast}. SPOTPY exigió 71 corridas para cinco parámetros y devolvió fracciones parciales: 0.3138 para runoff\_coeff y 0.1293 para quick\_recession, las dos mayores. El mínimo exacto demuestra ejecución, no estabilidad comparativa con FAST.
+
