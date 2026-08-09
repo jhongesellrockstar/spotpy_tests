@@ -1,0 +1,1 @@
+{"algorithms":["mc","lhs","sceua","dds"],"repetitions":80,"objective_function":"nse","seed":42,"database_format":"csv","output_directory":"runs"}

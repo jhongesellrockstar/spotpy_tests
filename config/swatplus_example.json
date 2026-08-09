@@ -1,0 +1,13 @@
+{
+  "project_name": "future_swatplus_basin",
+  "SWAT_EXECUTABLE": "REPLACE_WITH_VERIFIED_PATH",
+  "SWAT_PROJECT_DIR": "REPLACE_WITH_VERIFIED_PROJECT",
+  "OBSERVED_FLOW_FILE": "REPLACE_WITH_OBSERVED_CSV",
+  "SIMULATED_FLOW_FILE": "REPLACE_AFTER_VERIFYING_SWAT_OUTPUT",
+  "WARMUP_YEARS": 2,
+  "TIMEOUT_SECONDS": 3600,
+  "parameter_ranges": {
+    "CN2_EXAMPLE_ONLY": {"min": -0.2, "max": 0.2, "change_type": "relative"},
+    "ESCO_EXAMPLE_ONLY": {"min": 0.1, "max": 1.0, "change_type": "replace"}
+  }
+}

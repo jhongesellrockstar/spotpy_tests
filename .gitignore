@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.conda/
+.env
+.codebase-memory/
+runs/*/
+!runs/.gitkeep
+**/outputs/**
+**/workdirs/
+*.log
+08_external_model_adapter/output.csv

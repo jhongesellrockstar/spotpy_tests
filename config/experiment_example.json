@@ -1,0 +1,11 @@
+{
+  "project_name": "igp_hydrology_demo",
+  "model_type": "conceptual_rainfall_runoff",
+  "input_file": "03_hydrology_demo/data/input.csv",
+  "algorithm": "sceua",
+  "objective_function": "nse",
+  "repetitions": 120,
+  "seed": 42,
+  "database_format": "csv",
+  "output_directory": "runs"
+}

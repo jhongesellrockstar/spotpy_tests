@@ -1,0 +1,1 @@
+"""SPOTPY IGP laboratory package."""
